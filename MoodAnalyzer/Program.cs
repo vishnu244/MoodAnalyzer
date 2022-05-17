@@ -5,5 +5,5 @@ Console.WriteLine("Welcome to Mood Analyser!");
 
 
 AnalyseMood analyseMood = new();
-string result = analyseMood.AnalyseMoodMethod("I am in happy mood");
+string result = analyseMood.AnalyseMoodMethod("I am in Sad mood");
 Console.WriteLine(result);
