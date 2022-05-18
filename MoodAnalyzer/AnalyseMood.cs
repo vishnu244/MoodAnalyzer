@@ -8,22 +8,10 @@ namespace MoodAnalyzer
 {
     public class AnalyseMood
     {
-        public AnalyseMood()
-        {
-
-        }
-
-        public string msg1="I am in SAD Mood";
-        public AnalyseMood(string message)
-        {
-            this.msg1 = message;
-        }
-
-
-        public string AnalyseMoodMethod()
+        public string AnalyseMoodMethod(string message)
         {
             string message1 = "SAD";
-            if (msg1.ToUpper().Contains(message1.ToUpper()))
+            if (message.ToUpper().Contains(message1.ToUpper()))
             {
                 return message1;
             }

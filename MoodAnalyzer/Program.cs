@@ -4,10 +4,14 @@ using MoodAnalyzer;
 Console.WriteLine("Welcome to Mood Analyser!");
 
 
-AnalyseMood analyseMood = new();
-string result = analyseMood.AnalyseMoodMethod();
-Console.WriteLine("Using the Default Constructor here and mood is:" + result);
+AnalyseMood A1 = new();
+string result1 = A1.AnalyseMoodMethod("I am in Sad mood");
+Console.WriteLine(result1);
 
-AnalyseMood analyseMood1 = new("I am in Happy Mood");
-string result1 = analyseMood1.AnalyseMoodMethod();
-Console.WriteLine("Using the Parameterised Constructor here and mood is:" + result1);
+AnalyzeMoodUsingConstructor A2 = new();
+string result2 = A2.AnalyseMoodMethod();
+Console.WriteLine("Using the Default Constructor here and Mood is :" + result2);
+
+AnalyzeMoodUsingConstructor A3 = new("I am i Happy Mood");
+string result3 = A3.AnalyseMoodMethod();
+Console.WriteLine("Using the Parameterized Constructor here and Mood is :" + result3);
