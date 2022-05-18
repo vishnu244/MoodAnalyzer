@@ -26,6 +26,7 @@ while (true)
         case 3:
             MoodAnalyzerException A4 = new();
             string result4 = A4.MoodAnalyzerExceptionMethod(null);
+            Console.WriteLine(result4);
             break;
         default:
             break;
