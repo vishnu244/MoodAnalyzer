@@ -6,24 +6,23 @@ using System.Threading.Tasks;
 
 namespace MoodAnalyzer
 {
-
     public class MoodCustomException : Exception
     {
         public enum ExpType
         {
-            Empty_Message//, Null_Message
+            Empty_Message, Null_Message
         }
         public readonly ExpType type;
-       
+
         public MoodCustomException(ExpType type, string message) : base(message)
         {
             this.type = type;
         }
     }
 
-    public class MoodAnalyzerException
+    public class MoodAnalysisException
     {
-        public string MoodAnalyzerExceptionMethod(string message)
+        public string MMoodAnalysisExceptionMethod(string message)
         {
             try
             {
@@ -48,7 +47,7 @@ namespace MoodAnalyzer
                     Console.WriteLine("wrong Input");
                     return "Happy";
                 }
-                
+
             }
             catch (InvalidOperationException)
             {
@@ -63,7 +62,7 @@ namespace MoodAnalyzer
                 Console.WriteLine("You have provided null reference!");
                 //Console.WriteLine(ex.Message);
                 //return "Happy";
-                throw new MoodCustomException(MoodCustomException.ExpType.Empty_Message, "Mood should not be Null");
+                throw new MoodCustomException(MoodCustomException.ExpType.Null_Message, "Mood should not be Null");
 
             }
             return default(String);
