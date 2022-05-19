@@ -33,6 +33,19 @@ while (true)
             string result5 = A5.MMoodAnalysisExceptionMethod(null);
             Console.WriteLine(result5);
             break;
+        case 5:
+            object result6 = MoodAnalyzerFactory.CreateMoodAnalyzer("MoodAnalyzer.MoodAnalysisException", "64567_MoodAnalysisException");
+            Console.WriteLine(result6);
+
+           // foreach (object o in result6.ToString())
+           // {
+             //   Console.WriteLine(o.GetType);
+            //}
+
+           // object expected = new MoodAnalysisException();
+
+
+            break;
         default:
             break;
     }
