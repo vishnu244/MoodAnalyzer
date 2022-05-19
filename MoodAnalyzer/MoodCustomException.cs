@@ -33,15 +33,11 @@ namespace MoodAnalyzer
                 }
 
                 string msg1 = "SAD";
-                //string msg2 = "Happy";
                 if (message.ToUpper().Contains(msg1.ToUpper()))
                 {
                     return msg1;
                 }
-                /*else if (message.ToUpper().Contains(msg2.ToUpper()))
-                {
-                    return msg2;
-                }*/
+                
                 else
                 {
                     Console.WriteLine("wrong Input");
@@ -49,21 +45,11 @@ namespace MoodAnalyzer
                 }
 
             }
-            catch (InvalidOperationException)
-            {
-                Console.WriteLine("You have provided null reference 2!");
-                //Console.WriteLine(ex.Message);
-                //return "Happy";
-                throw new MoodCustomException(MoodCustomException.ExpType.Empty_Message, "Mood should not be Null");
-
-            }
+            
             catch (NullReferenceException)
             {
-                Console.WriteLine("You have provided null reference!");
-                //Console.WriteLine(ex.Message);
-                //return "Happy";
+                Console.WriteLine("You have provided null reference!");              
                 throw new MoodCustomException(MoodCustomException.ExpType.Null_Message, "Mood should not be Null");
-
             }
             return default(String);
         }
