@@ -53,11 +53,38 @@ namespace MoodAnalyzer
             }
         }
 
+
+        //using Reflections to change the mood dynamically
+        public static string SetField(string message, string fieldName)
+        {
+            try
+            {
+                AnalyseMood1 analyseMood = new ();
+                Type type = typeof(AnalyseMood1);
+                FieldInfo field = type.GetField(fieldName, BindingFlags.Public | BindingFlags.Instance);
+                if (message == null)
+                {
+                    throw new MoodCustomException(MoodCustomException.ExpType.NO_SUCH_FIELD, "Message should not be null");
+                }
+                field.SetValue(analyseMood, message);
+                return analyseMood.message2;
+            }
+            catch (NullReferenceException)
+            {
+                throw new MoodCustomException(MoodCustomException.ExpType.NO_SUCH_FIELD, "Field is Not Found");
+            }
+        }
+
     }
 
     public class AnalyseMood1
     {
-        public string message2;
+        public AnalyseMood1()
+        {
+
+        }
+
+        public string message2 = "HAPPY";
         public AnalyseMood1(string Message)
         {
             this.message2 = Message;

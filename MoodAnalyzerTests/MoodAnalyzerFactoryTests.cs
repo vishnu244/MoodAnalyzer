@@ -94,6 +94,7 @@ namespace MoodAnalyzer.Tests
             }
         }
 
+        //6.1
         [TestMethod()]
         public void UsingInvokeMethod1()
         {
@@ -102,6 +103,8 @@ namespace MoodAnalyzer.Tests
             Expected.Equals(result8);
         }
 
+
+        //6.2
         [TestMethod]
         public void UsingInvokeMethod2()
         {
@@ -109,6 +112,45 @@ namespace MoodAnalyzer.Tests
             try
             {
                 string result8 = MoodAnalyzerFactory.InvokeAnalyseMood("Happy", "123_AnalyseMoodMethod");
+            }
+            catch (Exception ex)
+            {
+                Assert.AreEqual(expected, ex.Message);
+            }
+        }
+        
+        //7.1
+        [TestMethod()]
+        public void SetField1()
+        {
+            object Expected = new AnalyseMood1("Happy");
+            string result9 = MoodAnalyzerFactory.SetField("Happy", "message2");
+            Expected.Equals(result9);
+        }
+
+        //7.2
+        [TestMethod]
+        public void SetField2()
+        {
+            string expected = "Field is Not Found";
+            try
+            {
+                string result9 = MoodAnalyzerFactory.SetField("Happy", "123_message2");
+            }
+            catch (Exception ex)
+            {
+                Assert.AreEqual(expected, ex.Message);
+            }
+        }
+
+        //7.3
+        [TestMethod]
+        public void SetField3()
+        {
+            string expected = "Message should not be null";
+            try
+            {
+                string result9 = MoodAnalyzerFactory.SetField(null, "message2");
             }
             catch (Exception ex)
             {
