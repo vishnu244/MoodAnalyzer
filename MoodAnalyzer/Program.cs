@@ -12,7 +12,7 @@ while (true)
     {
         case 1:
             AnalyseMood A1 = new();
-            string result1 = A1.AnalyseMoodMethod("I am in Sad Mood");
+            string result1 = A1.AnalyseMoodMethod("I am in  Mood");
             Console.WriteLine(result1);
             break;
         case 2:

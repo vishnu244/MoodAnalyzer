@@ -8,9 +8,13 @@ namespace MoodAnalyzer
 {
     public class AnalyseMood
     {
+     
+        //iam in sad mood
+        //utufyiguo dfggfij
         public string AnalyseMoodMethod(string message)
         {
             string message1 = "SAD";
+            string message2 = "happy";
             if (message.ToUpper().Contains(message1.ToUpper()))
             {
                 return message1;
@@ -18,6 +22,7 @@ namespace MoodAnalyzer
             else
             {
                 return "HAPPY";
+                
             }
 
         }

@@ -36,17 +36,7 @@ namespace MoodAnalyzer
         }
 
     }
-    /* public static object CreateMoodAnalyserObjectUsingParametzisedConstructor(string className, string constructorName, string message)
-     {
-         Type type = typeof(MoodAnalyser);
-         if (type.Name.Equals(className) || type.FullName.Equals(className))
-         {
-             if (type.Name.Equals(constructorName))
-             {
-                 ConstructorInfo constructor = type.GetConstructor(new[] { typeof(string) });
-                 object instance = constructo
-    */
-
+   
    public class MoodAnalyzerParameterizedConstructor
     {
 
