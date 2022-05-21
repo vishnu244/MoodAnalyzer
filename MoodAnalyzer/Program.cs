@@ -6,13 +6,13 @@ Console.WriteLine("Welcome to Mood Analyser!");
 while (true)
 {
     Console.WriteLine("Please choose the option :\n1)Happy or SAD Mood\n2)Using the Default and Parametterized Constructor\n3)Exception\n4)Custom Exception\n5" +
-        ")reflectors with Default Constructor\n6)reflectors with Parametarised Constructor");
+        ")reflectors with Default Constructor\n6)reflectors with Parametarised Constructor\n7)Reflections Invoke Method\n8)Reflections to change mood Dynamically");
     int option = Convert.ToInt16(Console.ReadLine());
     switch (option)
     {
         case 1:
             AnalyseMood A1 = new();
-            string result1 = A1.AnalyseMoodMethod("I am in Sad Mood");
+            string result1 = A1.AnalyseMoodMethod("I am in  Mood");
             Console.WriteLine(result1);
             break;
         case 2:
@@ -42,6 +42,14 @@ while (true)
             //MoodAnalyzerFactory moodAnalyzerFactory = new();
             object result7 = MoodAnalyzerParameterizedConstructor.UsingParameterizedConstructor("MoodAnalyzer.AnalyseMood1", "AnalyseMood1", "HAPPY");
             Console.WriteLine(result7);
+            break;
+        case 7:
+            string result8 = MoodAnalyzerFactory.InvokeAnalyseMood("Happy", "AnalyseMoodMethod");
+            Console.WriteLine(result8);
+            break;
+        case 8:
+            string result9 = MoodAnalyzerFactory.SetField(null, "456_message2");
+            Console.WriteLine(result9);
             break;
         default:
             break;
